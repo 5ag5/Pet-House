@@ -35,7 +35,7 @@ const app= createApp({
         filtroCheck(){
             console.log(this.checked)
            
-            if(this.checked=='ordenar por precio mas bajo'){
+            if(this.checked=='ordenar por precio más bajo'){
                 return this.juguetes.sort((x,y)=>x.precio-y.precio);
             }else{
                 return this.juguetes.sort((x,y)=>y.precio-x.precio);
