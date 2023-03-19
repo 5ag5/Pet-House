@@ -20,7 +20,7 @@ transform: scale(1.1);
 }
 .navbar{
 background-color: rgb(0, 183, 255) !important;
-max-height: 12vh;
+min-height: 12vh;
 }
 .nav_a{
 gap: 2rem;
@@ -161,6 +161,7 @@ font-size: 0.9rem;
     .carousel-inner .carousel-item > div:first-child {
         display: block;
     }
+    
 }
 
 .carousel-inner .carousel-item.active,
