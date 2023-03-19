@@ -9,7 +9,7 @@ const app= createApp({
             filtrados:[ ],
             busqueda:'',
             checked:[ ],
-            ordenar:['ordenar por precio mas bajo','ordenar por precio mas alto' ],
+            ordenar:['ordenar por precio más bajo','ordenar por precio más alto' ],
             cargando:true,
         }
     },

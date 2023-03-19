@@ -131,7 +131,7 @@
         </form>
       </div>
         <!--Cards-->  
-        <div class="row gap-3 justify-content-center">
+        <div class="row gap-3 justify-content-center mb-4">
             <template  v-if="filtrados.length>0" v-for="juguete of filtrados">
                 <div v-if="juguete.disponibles>=5" class="card col-3" style="width: 18rem;">
                     <img v-bind:src="juguete.imagen" class="card-img-top cardImage" alt="...">
