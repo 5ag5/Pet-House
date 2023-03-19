@@ -38,63 +38,161 @@
         </nav>
     </header>
     <main id="app">
-          
-        <!--checkbox-->
-      <div class="navbar colorCheck bg-body-tertiary d-flex justify-content-lg-around  mb-5 "> 
-        <div class="colorCheck d-flex flex-lg-row justify-content-lg-around " id="checkBox">
+         <h1 class="text-center text-primary">Juguetería</h1> 
+         <!--<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item  d-flex">
+                <img src="./img/huesoPerro.jpg" class="d-block w-100" alt="...">
+                <img src="./img/gatoRascador.jpg" class="d-block w-100" alt="...">
+                <img src="./img/pelotaPerro.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item d-flex">
+                <img src="./img/gatoRascador.jpg" class="d-block w-100" alt="...">
+                <img src="./img/pelotaPerro.jpeg" class="d-block w-100" alt="...">
+                <img src="./img/gatoRascador.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item d-flex">
+                <img src="./img/pelotaPerro.jpeg" class="d-block w-100" alt="...">
+                <img src="./img/huesoPerro.jpg" class="d-block w-100" alt="...">
+                <img src="./img/gatoRascador.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+          </div>-->
+          <div class="container text-center my-3">
+            <div class="row mx-auto my-auto justify-content-center">
+              <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                    <div class="col-md-3">
+                      <div class="card">
+                        <div class="card-img">
+                          <img src="./img/gatoRascador.jpg" class="img-fluid">
+                        </div>
+                        <div class="card-img-overlay">Slide 1</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-md-3">
+                      <div class="card">
+                        <div class="card-img">
+                          <img src="./img/huesoPerro.jpg" class="img-fluid">
+                        </div>
+                        <div class="card-img-overlay">Slide 2</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-md-3">
+                      <div class="card">
+                        <div class="card-img">
+                          <img src="./img/pelotaPerro.jpeg" class="img-fluid">
+                        </div>
+                        <div class="card-img-overlay">Slide 3</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-md-3">
+                      <div class="card">
+                        <div class="card-img">
+                          <img src="./img/gatoRascador.jpg" class="img-fluid">
+                        </div>
+                        <div class="card-img-overlay">Slide 4</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-md-3">
+                      <div class="card">
+                        <div class="card-img">
+                          <img src="./img/huesoPerro.jpg" class="img-fluid">
+                        </div>
+                        <div class="card-img-overlay">Slide 5</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-md-3">
+                      <div class="card">
+                        <div class="card-img">
+                          <img src="./img/pelotaPerro.jpeg" class="img-fluid">
+                        </div>
+                        <div class="card-img-overlay">Slide 6</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+              </div>
+            </div>		
+          </div>
+        <!--radios-->
+      <div class="navbar  navBarFiltros bg-body-tertiary d-flex justify-content-lg-around  mb-5 "> 
+        <div class=" d-flex flex-lg-row justify-content-lg-around navBarFiltros" id="checkBox">
           <template v-for="precio of  ordenar">
           <div class="form-check form-check-inline">
             <label class="form-check-label" ></label>
-              <input class="form-check-input"  @change=" filtroCheck" v-model="checked" type="radio"  :value='precio'>
+              <input class="form-check-input"  @change="  filtroCruzado" v-model="checked" type="radio"  :value='precio'>
               {{precio}}
             </label>
           </div>
         </template>
-          <!--<template v-for="precio of  ordenar">
-              <div class="form-check form-check-inline">
-                  <label class="form-check-label">
-                      <input class="form-check-input colorFuchsia" @change="filter" v-model="checked" type="checkbox" :value='precio'>
-                      {{precio}}
-                  </label>
-              </div>
-          </template>-->
-      </div> 
-  
+        </div> 
         <form class="d-flex" role="search" id="search-title">
           <input class="form-control me-2 colorFuchsia" type="search" aria-label="Search" v-model="busqueda">
-          <button class="btn btn-outline-info" type="submit" v-on:click.prevent="filtro">Search</button>
+          <button class="btn btn-outline-info" type="submit" v-on:click.prevent=" filtroCruzado">Search</button>
         </form>
       </div>
-        <!--Cards-->
-        
+        <!--Cards-->  
         <div class="row gap-3 justify-content-center">
-            <template v-for="juguete of filtrados">
+            <template  v-if="filtrados.length>0" v-for="juguete of filtrados">
                 <div v-if="juguete.disponibles>=5" class="card col-3" style="width: 18rem;">
                     <img v-bind:src="juguete.imagen" class="card-img-top cardImage" alt="...">
                     <div class="card-body">
-                    <h5 class="card-title">{{juguete.producto}}</h5>
-                    <p class="card-text">${{juguete.precio}}</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="juguete._id">
-                      Detalles
-                    </button>
+                    <h5 class="card-title tamañoNombre text-center">{{juguete.producto}}</h5>
+                    <p class="card-text text-center">${{juguete.precio}}</p>
+                    <div class="d-flex justify-content-between">
+                       <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="juguete._id">
+                            Detalles
+                          </button>-->
+                          <a :href="'./detalles.html?id='+juguete._id" class="btn btn-info tamañoBoton">See more</a>
+                          <a class="nav-link fa-sharp fa-regular fa-cart-shopping shopping_cart mt-1 colorIcono bg-primary d-flex justify-content-center align-items-center" href="./carrito.html"></a>
+                    </div>
+        
                     </div>
                 </div>
                 <div v-else class="card col-3" style="width: 18rem;">
                     
                     <div class="collection-img position-relative">
                         <img v-bind:src="juguete.imagen" class="card-img-top cardImage" alt="...">
-                        <span class="position-absolute colorSpan">Ultimas Unidades!</span>
+                        <span class="position-absolute colorSpan  text-center">Ultimas Unidades!</span>
                     </div>
                     
                     <div class="card-body">
-                    <h5 class="card-title">{{juguete.producto}}</h5>
-                    <p class="card-text">${{juguete.precio}}</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                      Detalles
-                    </button>
+                    <h5 class="card-title tamañoNombre text-center">{{juguete.producto}}</h5>
+                    <p class="card-text text-center">${{juguete.precio}}</p>
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-primary tamañoBoton" data-bs-toggle="modal" data-bs-target="#exampleModal" id="juguete._id">
+                            Detalles
+                          </button>
+                          <a class="nav-link fa-sharp fa-regular fa-cart-shopping shopping_cart mt-1 colorIcono bg-primary d-flex justify-content-center align-items-center" href="./carrito.html"></a>
+                    </div>
                      </div>
                     </div>
             </template>
+            <template v-else-if="cargando">
+              <h5 class="text-center">loading...</h5>
+          </template>
+          <template v-else>
+              <h5 class="text-center">no hay coincidencias para tu búsqueda</h5>
+          </template>  
+              
         </div>
         <!--modal-->
         <!-- Button trigger modal -->

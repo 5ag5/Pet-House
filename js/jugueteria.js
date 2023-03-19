@@ -9,7 +9,8 @@ const app= createApp({
             filtrados:[ ],
             busqueda:'',
             checked:[ ],
-            ordenar:['ordenar por precio mas bajo','ordenar por precio mas alto' ]
+            ordenar:['ordenar por precio mas bajo','ordenar por precio mas alto' ],
+            cargando:true,
         }
     },
     created(){
@@ -20,6 +21,8 @@ const app= createApp({
             this.filtrados=datos.filter(element=> element.categoria=="jugueteria")
             this.precios=datos.map(categoria=>categoria.precio)
             console.log(this.juguetes)
+            this.cargando=false  
+            console.log(this.checked)
         })
         .catch(err => console.log( err ))
     },
@@ -33,20 +36,31 @@ const app= createApp({
             console.log(this.checked)
            
             if(this.checked=='ordenar por precio mas bajo'){
-                this.filtrados=this.juguetes.sort((x,y)=>x.precio-y.precio);
-                console.log("mas bajo a +")
-                console.log(this.filtrados)
+                return this.juguetes.sort((x,y)=>x.precio-y.precio);
             }else{
-                
-                this.filtrados=this.juguetes.sort((x,y)=>y.precio-x.precio);
-                console.log("mas alto a -")
-                console.log(this.filtrados)
+                return this.juguetes.sort((x,y)=>y.precio-x.precio);
             }   
         },
-        /*encontrarProducto(){
-            console.log()
-        }*/
-        
+        filtroCruzado(){
+            let radio=this.filtroCheck();
+            let busqueda= radio.filter(juguete=>juguete.producto.toLowerCase().includes(this.busqueda.toLowerCase()))
+            this.filtrados=busqueda
+        }
     }
 })
 app.mount('#app')
+let items = document.querySelectorAll('.carousel .carousel-item')
+
+		items.forEach((el) => {
+			const minPerSlide = 4
+			let next = el.nextElementSibling
+			for (var i=1; i<minPerSlide; i++) {
+				if (!next) {
+            // wrap carousel by using first child
+            next = items[0]
+        }
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
