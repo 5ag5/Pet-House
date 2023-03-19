@@ -203,6 +203,11 @@ font-size: 0.9rem;
     .tamañoBoton{
         height: 2.5rem;
     }
+    .navBarFiltros{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     
     
 }
