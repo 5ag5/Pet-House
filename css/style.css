@@ -69,6 +69,24 @@ footer{
 background-color: rgb(0, 183, 255);
 min-height: 15vh;
 }
+.cardImage{
+    height: 16rem;
+    width: 16rem;
+    object-fit: cover;
+}
+.collection-img span{
+    top:  20px;
+    right: 2px;
+    height: 50px;
+    width: 65px;
+    border-radius: 20%;
+}
+.colorSpan{
+    background-color: red;
+    color: white;
+    font-size: small;
+    opacity: 0.5;
+}
 @media only screen and (max-width: 991px) {
 
 .nav-link{
