@@ -93,6 +93,10 @@ min-height: 15vh;
     border-radius: 5rem;
     
 }
+.colorCarrito{
+   
+    color: white;
+}
 .tamañoNombre{
     height: 2.5rem;
 }
@@ -230,5 +234,12 @@ font-size: 0.9rem;
         align-items: flex-start !important;
     }
     
+    
+}
+@media  (min-width:836px){
+    
+    .tamañoBoton{
+        height: 2.5rem  !important;
+    }
     
 }
