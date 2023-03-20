@@ -9,6 +9,9 @@ body{
 background-image: url(../img/Background.png);
 background-size: cover;
 }
+.detalles{
+    text-decoration: none;
+}
 .container_a{
 background-color: rgba(0, 183, 255, 0.721) !important;
 }

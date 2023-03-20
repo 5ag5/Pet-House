@@ -28,8 +28,8 @@
                     id="navbarNav">
                     <div class="navbar-nav nav_a d-flex align-items-center">
                         <a class="nav-link" href="./index.html">Inicio</a>
-                        <a class="nav-link active" aria-current="page" href="./jugueteria.html">Juguetería</a>
-                        <a class="nav-link" href="#">Farmacia</a>
+                        <a class="nav-link" aria-current="page" href="./jugueteria.html">Juguetería</a>
+                        <a class="nav-link active" href="#">Farmacia</a>
                         <a class="nav-link" href="./farmacia.html">Contacto</a>
                         <a class="nav-link fa-sharp fa-regular fa-cart-shopping shopping_cart mt-1" href="./carrito.html"></a>
                     </div>
@@ -160,7 +160,7 @@
                     <p class="card-text text-center">${{remedio.precio}}</p>
                     <div class="d-flex justify-content-between">
                         <button type="button" class="btn btn-primary tamañoBoton" data-bs-toggle="modal" data-bs-target="#exampleModal" id="remedio._id">
-                           <a :href="'./detalles.html?id='+remedio._id" style="color: white;">Detalles</a>  
+                           <a :href="'./detalles.html?id='+remedio._id" style="color: white;" class="detalles">Detalles</a>  
                           </button>
                           <a class="nav-link fa-sharp fa-regular fa-cart-shopping shopping_cart mt-1 colorIcono bg-primary d-flex justify-content-center align-items-center" href="./carrito.html"></a>
                     </div>
