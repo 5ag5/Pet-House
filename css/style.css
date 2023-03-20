@@ -21,7 +21,6 @@ transform: scale(1.1);
 .navbar{
 background-color: rgb(0, 183, 255) !important;
 min-height: 12vh;
-box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.338);
 }
 .nav_a{
 gap: 2rem;
@@ -70,6 +69,40 @@ footer{
 background-color: rgb(0, 183, 255);
 min-height: 15vh;
 }
+.cardImage{
+    height: 16rem;
+    width: 16rem;
+    object-fit: cover;
+}
+.collection-img span{
+    top:  20px;
+    right: 2px;
+    height: 42px;
+    width: 90px;
+    border-radius: 20%;
+}
+.colorSpan{
+    background-color: red;
+    color: white;
+    font-size: small;
+    opacity: 0.9;
+}
+.colorIcono{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 5rem;
+    
+}
+.tamañoNombre{
+    height: 2.5rem;
+}
+.carousel-item img{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    /*margin-left: 14px;*/
+  
+}
 @media only screen and (max-width: 991px) {
 
 .nav-link{
@@ -87,16 +120,22 @@ margin-bottom: 1rem;
 font-size: 1.5rem !important;
 }
 }
+.imgDetalles{
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+}
+.colorFondoDetailles{
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 5px 8px 12px black;
+    width: 50rem;
+}
+
 @media only screen and (max-width: 616px) {
 .horario{
 font-size: 0.9rem;
 width: 10rem;
-}
-.logo1{
-width: 60px;
-}
-.logo2{
-width: 80px ;
 }
 .redes{
 margin-right: 1rem;
@@ -114,4 +153,82 @@ padding: 0;
 .social a{
 font-size: 0.9rem;
 }
+}
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+    
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+        transform: translateX(25%);
+    }
+
+    .carousel-inner .carousel-item-start.active, 
+    .carousel-inner .carousel-item-prev {
+        transform: translateX(-25%);
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+    transform: translateX(0);
+}
+@media  (max-width:549px){
+    .colorFondoDetailles{
+        margin-top: 10rem;
+        flex-direction: column;
+        width: 19rem;
+        
+    }
+    .imgDetalles{
+        height: 220px;
+        width: 220px;
+        object-fit: cover;
+    }
+    .tamañoBoton{
+        height: 2.5rem;
+    }
+    .navBarFiltros{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    
+    
+}
+@media (min-width:550px) and (max-width:835px){
+    .colorFondoDetailles{
+        width: 30rem;
+        
+    }
+    .imgDetalles{
+        height: 220px;
+        width: 220px;
+        object-fit: cover;
+    }
+    .tamañoBoton{
+        height: 2.5rem;
+    }
+    .navBarFiltros{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    
+    
 }
