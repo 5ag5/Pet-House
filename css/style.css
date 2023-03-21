@@ -137,6 +137,8 @@ font-size: 0.9rem;
 .info p {
    max-width: 50vw;
    margin: 1rem;
+   font-size:1.4rem;
+  
 }
 
 .historia {
@@ -156,11 +158,13 @@ font-size: 0.9rem;
 }
 
 .ubi{
-    width: 30vw;
+    width: 50vw;
+    height: 50vh;
 }
 
 .mapa {
-    width:50vw;
+    width:30vw;
     border-radius: 10px;
     box-shadow: 5px 5px 5px black;
 }
+
