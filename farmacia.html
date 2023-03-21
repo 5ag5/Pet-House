@@ -40,80 +40,59 @@
     <main id="app">
       {{productosCompra}}
          <h1 class="text-center text-primary">Farmacia</h1> 
-          <div class="container text-center my-3">
-            <div class="row mx-auto my-auto justify-content-center">
-              <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner" role="listbox">
-                  <div class="carousel-item active">
-                    <div class="col-md-3">
-                      <div class="card">
-                        <div class="card-img">
-                          <img src="./img/gato.jpg" class="img-fluid">
-                        </div>
-                        <div class="card-img-overlay"></div>
-                      </div>
-                    </div>
+          <div class="container">          
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <img src="./img/gatoTetero.jpg" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item">
-                    <div class="col-md-3">
-                      <div class="card">
-                        <div class="card-img">
-                          <img src="./img/pajaro.jpg" class="img-fluid">
-                        </div>
-                        <div class="card-img-overlay"></div>
-                      </div>
-                    </div>
+                  <div class="col-lg-4">
+                    <img src="./img/tabletaPulgas.jpg" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item">
-                    <div class="col-md-3">
-                      <div class="card">
-                        <div class="card-img">
-                          <img src="./img/caballos.jpg" class="img-fluid">
-                        </div>
-                        <div class="card-img-overlay"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="col-md-3">
-                      <div class="card">
-                        <div class="card-img">
-                          <img src="./img/tigre.jpg" class="img-fluid">
-                        </div>
-                        <div class="card-img-overlay"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="col-md-3">
-                      <div class="card">
-                        <div class="card-img">
-                          <img src="./img/conejo.jpg" class="img-fluid">
-                        </div>
-                        <div class="card-img-overlay"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="col-md-3">
-                      <div class="card">
-                        <div class="card-img">
-                          <img src="./img/tortuga.jpg" class="img-fluid">
-                        </div>
-                        <div class="card-img-overlay"></div>
-                      </div>
-                    </div>
+                  <div class="col-lg-4">
+                    <img src="./img/peineGato.jpg" class="d-block w-100" alt="...">
                   </div>
                 </div>
-                <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
               </div>
-            </div>		
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <img src="./img/perroTetero.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="col-lg-4">
+                    <img src="./img/pastillaGato.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="col-lg-4">
+                    <img src="./img/peinePerro.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <img src="./img/gatitoLeche.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="col-lg-4">
+                    <img src="./img/perroGato.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="col-lg-4">
+                    <img src="./img/perroComiendo.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
+        </div>
         <!--radios-->
       <div class="navbar  navBarFiltros bg-body-tertiary d-flex justify-content-lg-around  mb-5 "> 
         <div class=" d-flex flex-lg-row justify-content-lg-around  flex-wrap navBarFiltros" id="checkBox">
@@ -138,14 +117,15 @@
                     <img v-bind:src="remedio.imagen" class="card-img-top cardImage" alt="...">
                     <div class="card-body">
                     <h5 class="card-title tamañoNombre text-center">{{remedio.producto}}</h5>
+                    <p class="card-text text-center">Disponibles: {{remedio.disponibles}}</p>
                     <p class="card-text text-center">${{remedio.precio}}</p>
                     <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-primary"  v-on:click="seleccionarProductos(remedio._id)">
+                      <button type="button" class="btn colorBotones"  v-on:click="seleccionarProductos(remedio._id)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart colorCarrito" viewBox="0 0 16 16">
                           <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                         </svg>
                         </button>
-                          <a :href="'./detalles.html?id='+remedio._id" class="btn btn-info tamañoBoton">See more</a>
+                          <a :href="'./detalles.html?id='+remedio._id" class="btn colorBotones tamañoBoton">Detalles</a>
                     </div>
         
                     </div>
@@ -159,14 +139,15 @@
                     
                     <div class="card-body">
                     <h5 class="card-title tamañoNombre text-center">{{remedio.producto}}</h5>
+                    <p class="card-text text-center">Disponibles: {{remedio.disponibles}}</p>
                     <p class="card-text text-center">${{remedio.precio}}</p>
                     <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-primary"  v-on:click="seleccionarProductos(remedio._id)">
+                      <button type="button" class="btn colorBotones"  v-on:click="seleccionarProductos(remedio._id)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart colorCarrito" viewBox="0 0 16 16">
                           <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                         </svg>
                         </button>
-                        <a :href="'./detalles.html?id='+remedio._id" class="btn btn-info tamañoBoton">See more</a>  
+                        <a :href="'./detalles.html?id='+remedio._id" class="btn colorBotones tamañoBoton">Detalles</a>  
                     </div>
                      </div>
                     </div>

@@ -21,6 +21,7 @@ const app = createApp({
             .then(datos => {
                 this.farmacia = datos.filter(element => element.categoria == "farmacia")
                 this.filtrados = datos.filter(element => element.categoria == "farmacia")
+                console.log(this.farmacia)
                 this.precios = datos.map(categoria => categoria.precio)
                 this.cargando = false
                 
@@ -64,7 +65,7 @@ const app = createApp({
 app.mount('#app')
 let items = document.querySelectorAll('.carousel .carousel-item')
 
-items.forEach((el) => {
+/*items.forEach((el) => {
     const minPerSlide = 4
     let next = el.nextElementSibling
     for (var i = 1; i < minPerSlide; i++) {
@@ -76,4 +77,4 @@ items.forEach((el) => {
         el.appendChild(cloneChild.children[0])
         next = next.nextElementSibling
     }
-})
+})*/
