@@ -6,14 +6,14 @@ const app= createApp({
             juguetes: [ ],
             precios:[ ],
             preciosOrdenados:[ ],
-            filtrados:[ ],
+            filtrados:JSON.parse( localStorage.getItem('filtrados') ) || [],
             busqueda:'',
             checked:[ ],
             ordenar:['ordenar por precio más bajo','ordenar por precio más alto' ],
             cargando:true,
             total:0,
             comprar: JSON.parse( localStorage.getItem('comprar') ) || []
-            //JSON.parse( localStorage.getItem('comprar') ) || []
+            
         }
     },
     created(){
@@ -23,13 +23,12 @@ const app= createApp({
             datos.map(element=>console.log(element))
             this.juguetes=datos.filter(element=> element.categoria=="jugueteria")
             this.filtrados=datos.filter(element=> element.categoria=="jugueteria")
+
             this.precios=datos.map(categoria=>categoria.precio)
             console.log(this.juguetes)
             this.cargando=false  
             console.log(this.checked)
-            
-           /*this.comprar=JSON.parse( localStorage.getItem('comprar') ) || []
-            console.log(this.comprar)*/
+
         })
         .catch(err => console.log( err ))
     },
@@ -57,57 +56,28 @@ const app= createApp({
             this.comprar=[ ]
         },
         seleccionarProductos(id){
-           let juguete= this.filtrados.find(juguete=>juguete._id==id)
+           /*let juguete= this.filtrados.find(juguete=>juguete._id==id)
            if(juguete.disponibles>0){
             console.log(juguete)
             this.comprar.push(id)
             juguete.disponibles=juguete.disponibles-1;
-            
-           }
+       
+           }*/
+           for(let juguete of this.filtrados){
+            if (juguete._id === id){
+                juguete.disponibles = juguete.disponibles-1
+            }
            console.log(juguete)
           
         }
+        localStorage.setItem( 'filtrados', JSON.stringify( this.filtrados) )
+    }
     },
     computed:{
         productosCompra(){
             localStorage.setItem( 'comprar', JSON.stringify( this.comprar ) )
-            let prodComprar=[ ]
-            for(let producto of this.juguetes){
-                for(let element of this.comprar){
-                    if(producto.producto==element){
-                        prodComprar.push(producto)
-                        
-                    }
-                }
-            }
-            console.log(prodComprar)
-            //prodComprar.map(element=>console.log())
-            this.total=prodComprar.reduce((acc, jueguete)=>{
-               return acc+jueguete.precio;
-                console.log(acc)
-                console.log(jueguete.precio)
-            },0)
-            console.log(this.total)
-           /* for(let juguete of prodComprar){
-                this.total+=juguete.precio
-            }*/
-           
+            
         },
     }
 })
 app.mount('#app')
-let items = document.querySelectorAll('.carousel .carousel-item')
-
-		items.forEach((el) => {
-			const minPerSlide = 4
-			let next = el.nextElementSibling
-			for (var i=1; i<minPerSlide; i++) {
-				if (!next) {
-            // wrap carousel by using first child
-            next = items[0]
-        }
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
-    }
-})

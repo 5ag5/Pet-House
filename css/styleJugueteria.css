@@ -107,6 +107,9 @@ min-height: 15vh;
     /*margin-left: 14px;*/
   
 }
+.colorBotones{
+    background-color: rgb(0, 183, 255) !important;
+}
 @media only screen and (max-width: 991px) {
 
 .nav-link{
@@ -135,6 +138,10 @@ font-size: 1.5rem !important;
     box-shadow: 5px 8px 12px black;
     width: 50rem;
 }
+.carousel-item img{
+    height: 70vh;
+    object-fit: cover;
+}
 
 @media only screen and (max-width: 616px) {
 .horario{
@@ -158,40 +165,6 @@ padding: 0;
 font-size: 0.9rem;
 }
 }
-@media (max-width: 767px) {
-    .carousel-inner .carousel-item > div {
-        display: none;
-    }
-    .carousel-inner .carousel-item > div:first-child {
-        display: block;
-    }
-    
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-    display: flex;
-}
-
-/* medium and up screens */
-@media (min-width: 768px) {
-
-    .carousel-inner .carousel-item-end.active,
-    .carousel-inner .carousel-item-next {
-        transform: translateX(25%);
-    }
-
-    .carousel-inner .carousel-item-start.active, 
-    .carousel-inner .carousel-item-prev {
-        transform: translateX(-25%);
-    }
-}
-
-.carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start { 
-    transform: translateX(0);
-}
 @media  (max-width:549px){
     .colorFondoDetailles{
         margin-top: 10rem;
@@ -212,9 +185,13 @@ font-size: 0.9rem;
         flex-direction: column;
         align-items: flex-start !important;
     }
-    
-    
+    .navBarFiltrosRadios{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+    }  
 }
+
 @media (min-width:550px) and (max-width:835px){
     .colorFondoDetailles{
         width: 30rem;
