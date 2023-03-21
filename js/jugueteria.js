@@ -12,7 +12,7 @@ const app= createApp({
             ordenar:['ordenar por precio más bajo','ordenar por precio más alto' ],
             cargando:true,
             total:0,
-            comprar:JSON.parse( localStorage.getItem('comprar') ) || []
+            comprar: JSON.parse( localStorage.getItem('comprar') ) || []
             //JSON.parse( localStorage.getItem('comprar') ) || []
         }
     },
@@ -28,7 +28,7 @@ const app= createApp({
             this.cargando=false  
             console.log(this.checked)
             
-           /* this.comprar=JSON.parse( localStorage.getItem('comprar') ) || []
+           /*this.comprar=JSON.parse( localStorage.getItem('comprar') ) || []
             console.log(this.comprar)*/
         })
         .catch(err => console.log( err ))
@@ -59,8 +59,12 @@ const app= createApp({
         seleccionarProductos(id){
            let juguete= this.filtrados.find(juguete=>juguete._id==id)
            if(juguete.disponibles>0){
+            console.log(juguete)
             this.comprar.push(id)
+            juguete.disponibles=juguete.disponibles-1;
+            
            }
+           console.log(juguete)
           
         }
     },
@@ -72,8 +76,7 @@ const app= createApp({
                 for(let element of this.comprar){
                     if(producto.producto==element){
                         prodComprar.push(producto)
-                        console.log(prodComprar)
-                        console.log(this.total)
+                        
                     }
                 }
             }
