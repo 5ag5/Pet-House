@@ -37,7 +37,7 @@
     <main id="appCarrito">
         <h1 id="tituloCarrito">Carrito de Compras</h1>
         <div id="contenedorCardsyBotones">
-            <div>
+            <div id="contenedorCardsYMensaje">
                 <template v-if="carritoMascotas.length > 0" v-for= "elemento of mascotasNuevoArray" id="cardCarrito">
                     <div class="card mb-3" style="max-width: 440px;">
                         <div class="row g-0">
@@ -80,7 +80,7 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Proceso de Pago</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

@@ -80,6 +80,15 @@ min-height: 15vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 1rem;
+    width: 100%;
+}
+
+#contenedorCardsYMensaje{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
 }
 
 #contenedorTotalyPrecios{
