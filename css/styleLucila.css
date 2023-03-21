@@ -12,6 +12,7 @@ background-size: cover;
 .detalles{
     text-decoration: none;
 }
+
 .container_a{
 background-color: rgba(0, 183, 255, 0.721) !important;
 }
@@ -106,6 +107,9 @@ min-height: 15vh;
     /*margin-left: 14px;*/
   
 }
+.img{
+    object-fit: cover;
+}
 @media only screen and (max-width: 991px) {
 
 .nav-link{
@@ -134,7 +138,9 @@ font-size: 1.5rem !important;
     box-shadow: 5px 8px 12px black;
     width: 50rem;
 }
-
+.colorBotones{
+    background-color: rgb(0, 183, 255) !important;
+}
 @media only screen and (max-width: 616px) {
 .horario{
 font-size: 0.9rem;
@@ -156,40 +162,6 @@ padding: 0;
 .social a{
 font-size: 0.9rem;
 }
-}
-@media (max-width: 767px) {
-    .carousel-inner .carousel-item > div {
-        display: none;
-    }
-    .carousel-inner .carousel-item > div:first-child {
-        display: block;
-    }
-    
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-    display: flex;
-}
-
-/* medium and up screens */
-@media (min-width: 768px) {
-
-    .carousel-inner .carousel-item-end.active,
-    .carousel-inner .carousel-item-next {
-        transform: translateX(25%);
-    }
-
-    .carousel-inner .carousel-item-start.active, 
-    .carousel-inner .carousel-item-prev {
-        transform: translateX(-25%);
-    }
-}
-
-.carousel-inner .carousel-item-end,
-.carousel-inner .carousel-item-start { 
-    transform: translateX(0);
 }
 @media  (max-width:549px){
     .colorFondoDetailles{
