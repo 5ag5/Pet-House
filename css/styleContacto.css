@@ -87,6 +87,36 @@ margin-bottom: 1rem;
 font-size: 1.5rem !important;
 }
 }
+/* Contacto */
+.section_contact{
+background-color: rgba(0, 225, 255, 0.466);
+margin: 3rem;
+border-radius: 2%;
+box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.342);
+}
+.form_contact0{
+width: 50vw;
+border-radius: 5%;
+}
+.form_contact{
+
+margin-bottom:2rem;
+}
+
+.title_contact{
+font-weight: bold;
+color: rgb(255, 255, 255);
+text-shadow: 1px 5px 5px rgba(0, 0, 0, 0.473);
+}
+.form-label,.form-check-label{
+color: rgb(0, 0, 0);
+text-shadow: 1px 5px 5px rgb(255, 255, 255);
+font-size: 1.2rem;
+}
+.button{
+display: flex;
+justify-content: end;
+}
 @media only screen and (max-width: 616px) {
 .horario{
 font-size: 0.9rem;
@@ -113,5 +143,8 @@ padding: 0;
 }
 .social a{
 font-size: 0.9rem;
+}
+.button{
+justify-content: center;
 }
 }
