@@ -56,20 +56,14 @@ const app= createApp({
             this.comprar=[ ]
         },
         seleccionarProductos(id){
-           /*let juguete= this.filtrados.find(juguete=>juguete._id==id)
+           let juguete= this.filtrados.find(juguete=>juguete._id==id)
            if(juguete.disponibles>0){
             console.log(juguete)
             this.comprar.push(id)
             juguete.disponibles=juguete.disponibles-1;
        
-           }*/
-           for(let juguete of this.filtrados){
-            if (juguete._id === id){
-                juguete.disponibles = juguete.disponibles-1
-            }
-           console.log(juguete)
-          
-        }
+           }
+           
         localStorage.setItem( 'filtrados', JSON.stringify( this.filtrados) )
     }
     },
