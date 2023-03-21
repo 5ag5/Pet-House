@@ -11,7 +11,8 @@ const app = createApp({
             checked: [],
             ordenar: ['ordenar por precio más bajo', 'ordenar por precio más alto'],
             cargando: true,
-            details: []
+            details: [],
+            comprarRemedios: JSON.parse( localStorage.getItem('comprarRemedios') ) || []
         }
     },
     created() {
@@ -21,25 +22,19 @@ const app = createApp({
                 this.farmacia = datos.filter(element => element.categoria == "farmacia")
                 this.filtrados = datos.filter(element => element.categoria == "farmacia")
                 this.precios = datos.map(categoria => categoria.precio)
-                console.log(this.farmacia)
                 this.cargando = false
-                console.log(this.checked)
-                const params = new URLSearchParams(location.search)
-                const id = params.get("id")
-                this.details = datos.farmacia.find(element => element._id == id);
+                
             })
             .catch(err => console.log(err))
     },
     methods: {
         filtro() {
-            console.log("funciona")
             this.filtrados = this.farmacia.filter(remedio => remedio.producto.toLowerCase().includes(this.busqueda.toLowerCase()))
-            console.log(this.filtrados)
+
         },
         filtroCheck() {
-            console.log(this.checked)
-
-            if (this.checked == 'ordenar por precio más bajo') {
+  
+              if (this.checked == 'ordenar por precio más bajo') {
                 return this.farmacia.sort((x, y) => x.precio - y.precio);
             } else {
                 return this.farmacia.sort((x, y) => y.precio - x.precio);
@@ -49,6 +44,19 @@ const app = createApp({
             let radio = this.filtroCheck();
             let busqueda = radio.filter(remedio => remedio.producto.toLowerCase().includes(this.busqueda.toLowerCase()))
             this.filtrados = busqueda
+        },
+        seleccionarProductos(id){
+            let remedio= this.filtrados.find(remedio=>remedio._id==id)
+            if(remedio.disponibles>0){
+             this.comprarRemedios.push(id)
+             remedio.disponibles=remedio.disponibles-1;
+             
+            }
+        }
+    },
+    computed:{
+        productosCompra(){
+            localStorage.setItem( 'comprarRemedios', JSON.stringify( this.comprarRemedios ) )
         }
     }
 })

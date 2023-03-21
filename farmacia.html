@@ -38,6 +38,7 @@
         </nav>
     </header>
     <main id="app">
+      {{productosCompra}}
          <h1 class="text-center text-primary">Farmacia</h1> 
           <div class="container text-center my-3">
             <div class="row mx-auto my-auto justify-content-center">
@@ -139,11 +140,12 @@
                     <h5 class="card-title tamañoNombre text-center">{{remedio.producto}}</h5>
                     <p class="card-text text-center">${{remedio.precio}}</p>
                     <div class="d-flex justify-content-between">
-                       <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="juguete._id">
-                            Detalles
-                          </button>-->
+                      <button type="button" class="btn btn-primary"  v-on:click="seleccionarProductos(remedio._id)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart colorCarrito" viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                        </button>
                           <a :href="'./detalles.html?id='+remedio._id" class="btn btn-info tamañoBoton">See more</a>
-                          <a class="nav-link fa-sharp fa-regular fa-cart-shopping shopping_cart mt-1 colorIcono bg-primary d-flex justify-content-center align-items-center" href="./carrito.html"></a>
                     </div>
         
                     </div>
@@ -159,10 +161,12 @@
                     <h5 class="card-title tamañoNombre text-center">{{remedio.producto}}</h5>
                     <p class="card-text text-center">${{remedio.precio}}</p>
                     <div class="d-flex justify-content-between">
-                        <button type="button" class="btn btn-primary tamañoBoton" data-bs-toggle="modal" data-bs-target="#exampleModal" id="remedio._id">
-                           <a :href="'./detalles.html?id='+remedio._id" style="color: white;" class="detalles">Detalles</a>  
-                          </button>
-                          <a class="nav-link fa-sharp fa-regular fa-cart-shopping shopping_cart mt-1 colorIcono bg-primary d-flex justify-content-center align-items-center" href="./carrito.html"></a>
+                      <button type="button" class="btn btn-primary"  v-on:click="seleccionarProductos(remedio._id)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart colorCarrito" viewBox="0 0 16 16">
+                          <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                        </button>
+                        <a :href="'./detalles.html?id='+remedio._id" class="btn btn-info tamañoBoton">See more</a>  
                     </div>
                      </div>
                     </div>
