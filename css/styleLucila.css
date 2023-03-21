@@ -25,10 +25,6 @@ transform: scale(1.1);
 .navbar{
 background-color: rgb(0, 183, 255) !important;
 min-height: 12vh;
-<<<<<<<< HEAD:stylesCarrito.css
-box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.338);
-========
->>>>>>>> origin/Lucila:css/styleLucila.css
 }
 .nav_a{
 gap: 2rem;
@@ -77,45 +73,6 @@ footer{
 background-color: rgb(0, 183, 255);
 min-height: 15vh;
 }
-<<<<<<<< HEAD:stylesCarrito.css
-
-#appCarrito{
-    display: flex;
-    flex-direction: column;
-}
-
-#contenedorCardsyBotones{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 1rem;
-    width: 100%;
-}
-
-#contenedorCardsYMensaje{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
-}
-
-#contenedorTotalyPrecios{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-}
-
-#tituloCarrito{
-text-align: center;
-margin: 1rem;
-}
-
-#mensajeDescupado{
-    text-align: center;
-}
-
-========
 .cardImage{
     height: 16rem;
     width: 16rem;
@@ -153,7 +110,6 @@ margin: 1rem;
 .img{
     object-fit: cover;
 }
->>>>>>>> origin/Lucila:css/styleLucila.css
 @media only screen and (max-width: 991px) {
 
 .nav-link{
@@ -190,12 +146,6 @@ font-size: 1.5rem !important;
 font-size: 0.9rem;
 width: 10rem;
 }
-.logo1{
-width: 60px;
-}
-.logo2{
-width: 80px ;
-}
 .redes{
 margin-right: 1rem;
 }
@@ -212,9 +162,6 @@ padding: 0;
 .social a{
 font-size: 0.9rem;
 }
-<<<<<<<< HEAD:stylesCarrito.css
-
-========
 }
 @media  (max-width:549px){
     .colorFondoDetailles{
@@ -259,5 +206,4 @@ font-size: 0.9rem;
     }
     
     
->>>>>>>> origin/Lucila:css/styleLucila.css
 }
