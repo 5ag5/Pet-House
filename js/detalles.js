@@ -30,8 +30,4 @@ const app = createApp( {
     },
 })
 
-<<<<<<< HEAD
 app.mount('#app')
-=======
-app.mount('#app')
->>>>>>> origin/Lucila
